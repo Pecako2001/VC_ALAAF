@@ -200,3 +200,25 @@
     }
   }
   
+  @media (max-width: 600px) {
+    .wagen-gallery {
+      margin: 0;
+      padding: 0;
+    }
+    .wagen-item {
+      width: 100%;
+      padding: 0;
+    }
+    .wagen-item img {
+      width: 100vw; /* Full viewport width */
+      height: auto;
+      object-fit: cover; /* Optional: ensures image covers the space without distortion */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .topbar .menu {
+      display: none;
+    }
+  }
+  
