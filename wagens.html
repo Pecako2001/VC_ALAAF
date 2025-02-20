@@ -3,52 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carnavals Wagens - Overzicht</title>
-  <link rel="stylesheet" href="css/wagens.css" />
+  <title>Carnavals wagen-earliers - Overzicht</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Navigation Bar -->
   <header>
     <nav class="topbar">
-      <div class="logo">
-        <img src="assets/images/Logo.png" alt="Club van 33 Logo" />
+      <a href="/index.html" class="logo">
+        <img src="assets/images/Logo.png" alt="Club van 33 Logo">
+      </a>
+      <div class="title">
+        <h1>VC-ALAAF</h1>
       </div>
-      <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="wagens.html">Wagens</a></li>
-        <li><a href="index.html#sponsors">Sponsors</a></li>
-        <li><a href="index.html#become-sponsor">Wordt sponsor</a></li>
+      <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+      <ul class="menu" id="menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#sponsors">Sponsors</a></li>
+        <li><a href="/index.html#become-sponsor">Wordt sponsor</a></li>
       </ul>
-      <!-- Hamburger Menu for Mobile -->
-      <div class="hamburger-menu" onclick="toggleMenu()">
-        ☰
-      </div>
     </nav>
   </header>
-
-  <!-- Wagen Display Section -->
-  <section class="wagen-container">
-    <div class="wagen-item">
-      <img src="assets/images/Wagen2024.jpeg" alt="Wagen 2025" />
-      <div class="wagen-info">
+  
+  <!-- wagen-earlier Display Section -->
+  <section class="wagen-earlier-container">
+    <div class="wagen-earlier-item">
+      <img src="assets/images/Wagen2024.jpeg" alt="wagen-earlier 2025" />
+      <div class="wagen-earlier-info">
         <h2>2025</h2>
         <h3>Thema: Kermis</h3>
         <p>De kermis is os um ut aeve, vesteloavend, det is os leave!</p>
       </div>
     </div>
-    
-    <div class="wagen-item reverse">
-      <div class="wagen-info">
+
+    <div class="wagen-earlier-item">
+      <img src="assets/images/Wagen2024.jpeg" alt="wagen-earlier 2025" />
+      <div class="wagen-earlier-info">
         <h2>2024</h2>
-        <h3>Thema: Bob de Bouwer</h3>
-        <p>De kermis is os um ut aeve, vesteloavend, det is os leave!</p>
+        <h3>Thema: Bob de bouwer</h3>
+        <p>Wea zien neet de BOB mer de Bouwers!</p>
       </div>
-      <img src="assets/images/Wagen2024.jpeg" alt="Wagen 2024" />
     </div>
 
-    <div class="wagen-item">
-      <img src="assets/images/Wagen2024.jpeg" alt="Wagen 2023" />
-      <div class="wagen-info">
+    <div class="wagen-earlier-item">
+      <img src="assets/images/Wagen2024.jpeg" alt="wagen-earlier 2023" />
+      <div class="wagen-earlier-info">
         <h2>2023</h2>
         <h3>Thema: Skihut</h3>
         <p>De kermis is os um ut aeve, vesteloavend, det is os leave!</p>
@@ -56,6 +54,7 @@
     </div>
   </section>
 
-  <script src="js/wagens.js"></script>
+  <script src="js/wagen-earliers.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 </html>

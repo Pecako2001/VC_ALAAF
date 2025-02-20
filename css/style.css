@@ -1,55 +1,58 @@
 /* ------------------------------
-   TOP NAVIGATION BAR
+   TOP NAVIGATION BAR 
 ------------------------------ */
 .topbar {
-  position: relative;
+  position: fixed;  /* Always at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  background: #222;
-  padding: 10px 20px;
+  justify-content: space-between;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
+/* Fix logo size */
 .topbar .logo {
-  order: 0;
+  flex: 0 0 auto; /* Do not grow */
 }
 
 .topbar .logo img {
-  max-height: 50px; /* or whatever height you prefer */
+  max-height: 50px;
   width: auto;
   object-fit: contain;
   display: block;
 }
 
-.topbar .title{
-  flex: 1;
-  order: 1;
-  text-align: center;
-  margin: 0;
+/* Title centered */
+.topbar .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap; /* Prevents title from wrapping */
 }
 
-.title {
+.topbar .title h1 {
   color: #ffffff;
   font-size: 24px;
-  text-align: center;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
+  margin: 0;
 }
 
+/* Navigation Menu */
 .topbar .menu {
-  order: 2;
   list-style: none;
   display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-.topbar .hamburger-menu {
-  order: 3;
-  font-size: 30px;
-  cursor: pointer;
-  color: #fff;
-  display: none; 
-}
-
+/* Menu Items */
 .topbar .menu li {
   margin-left: 20px;
 }
@@ -65,9 +68,23 @@
   color: #f39c12;
 }
 
-/* Hamburger menu on mobile */
+/* ------------------------------
+   HAMBURGER MENU
+------------------------------ */
+.hamburger-menu {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  display: none;  /* Hidden on Desktop */
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Mobile: Show hamburger and hide menu */
 @media (max-width: 768px) {
   .hamburger-menu {
+    display: block;  /* Show menu button */
     position: absolute;
     right: 20px;
     top: 10px;
@@ -75,25 +92,23 @@
   }
 
   .topbar .menu {
-    display: none;
+    display: none;  /* Hide menu by default */
+    flex-direction: column;
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
-    background: #222;
-    flex-direction: column;
+    background: #333;
     text-align: center;
     padding: 10px 0;
   }
-  .topbar .menu li {
-    margin: 10px 0;
+
+  .topbar .menu.active {
+    display: flex;  /* Show menu when active */
   }
 
-  .hamburger-menu {
-    position: absolute; /* or keep it in flow if you prefer */
-    right: 20px;
-    top: 10px;
-    z-index: 9999;
+  .topbar .menu li {
+    margin: 10px 0;
   }
 }
 
@@ -121,7 +136,7 @@ h2 {
   font-size: 24px;
   font-weight: bold;
   color: white;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* Desktop: 2 columns */
@@ -175,17 +190,27 @@ h2 {
     text-transform: uppercase;
     letter-spacing: 3px;
   }
+
+  h2 {
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
 }
 
 /* ------------------------------
    FOOTER
 ------------------------------ */
 footer {
-  background: #222;
+  background: #333;
   color: white;
   text-align: center;
-  padding: 15px;
-  margin-top: 20px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 footer p {
@@ -197,8 +222,8 @@ footer p {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  background: #f39c12;
-  color: white;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
   padding: 8px 16px;
   border-radius: 5px;
   font-weight: bold;
@@ -206,17 +231,17 @@ footer p {
 }
 
 .instagram-button img {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin-right: 8px;
 }
 
 .instagram-button:hover {
-  background: #d35400;
+  background: #6783ff;
 }
 
 /* ------------------------------
-   SPONSOR SECTION
+   SPONSOR SECTION (Fixed)
 ------------------------------ */
 .sponsor-section {
   background: #333;
@@ -224,26 +249,34 @@ footer p {
   overflow: hidden;
   position: relative;
   width: 100%;
-  white-space: nowrap;
+  box-sizing: border-box; /* Ensures padding doesn’t cause overflow */
 }
 
+/* Wrapper to keep it within margins */
+.sponsor-container {
+  max-width: 1000px; /* Adjust this as needed */
+  margin: 0 auto;
+  overflow: hidden; /* Prevents content from breaking layout */
+}
+
+/* Scrolling Sponsor Track */
 .sponsor-track {
   display: flex;
   align-items: center;
   gap: 40px;
-  width: max-content;
-  transform: translateX(0%);
-  animation: scrollLeft 60s linear infinite;
+  width: 100%; /* Now it stays inside the container */
+  white-space: nowrap;
   flex-wrap: nowrap;
+  animation: scrollLeft 60s linear infinite;
 }
 
+/* Individual Sponsor Items */
 .sponsor-item {
   flex: 0 0 auto;
 }
 
 .sponsor-item img {
-  height: 80px;
-  width: auto;
+  height: 100px; /* Reduced size to prevent overflow */
   object-fit: contain;
   filter: brightness(0.8);
   transition: filter 0.3s;
@@ -253,12 +286,23 @@ footer p {
   filter: brightness(1);
 }
 
+/* Fix scrolling animation */
 @keyframes scrollLeft {
   from {
     transform: translateX(0%);
   }
   to {
-    transform: translateX(-100%);
+    transform: translateX(-300%);
+  }
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 768px) {
+  .sponsor-track {
+    animation-duration: 15s; /* Speed up animation on mobile */
+  }
+  .sponsor-item img {
+    height: 50px; /* Scale down for mobile */
   }
 }
 
@@ -268,7 +312,7 @@ footer p {
 .sponsor-input {
   background: #333;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: center;
   color: #fff;
 }
@@ -316,4 +360,111 @@ footer p {
 
 .form-response p {
   color: #fff;
+}
+
+/* ------------------------------
+   WAGEN-EARLIER SECTION 
+------------------------------ */
+.wagen-earlier-container {
+  max-width: 1000px;
+  margin: 80px auto 40px; /* Push content below navbar */
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Styling for each wagen block */
+.wagen-earlier-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(214, 214, 214);
+  padding: 10px;
+
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.wagen-earlier-item img {
+  width: 45%;
+  border-radius: 10px;
+}
+
+/* Text container */
+.wagen-earlier-info {
+  width: 45%;
+  text-align: left;
+}
+
+/* Title: Year */
+.wagen-earlier-info h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+/* Theme Heading */
+.wagen-earlier-info h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Description */
+.wagen-earlier-info p {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Reverse Order for Alternating Layout on Desktop */
+.wagen-earlier-item.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ------------------------------
+   MOBILE LAYOUT FIX 
+------------------------------ */
+@media (max-width: 768px) {
+  .wagen-earlier-container {
+    margin-top: 100px; /* Ensure it starts below navbar */
+  }
+
+  .wagen-earlier-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* Ensure year is first */
+  .wagen-earlier-info {
+    order: -2;
+    width: 100%;
+  }
+
+  .wagen-earlier-info h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  /* Image should be second */
+  .wagen-earlier-item img {
+    width: 90%;
+    order: -1;
+    margin-bottom: 10px;
+  }
+
+  /* Theme + description below */
+  .wagen-earlier-info h3 {
+    text-align: center;
+  }
+
+  .wagen-earlier-info p {
+    text-align: center;
+  }
 }
