@@ -431,7 +431,7 @@ footer p {
    MOBILE LAYOUT FIX 
 ------------------------------ */
 @media (max-width: 768px) {
-  .wagen-earlier-container {
+  .wagen-earlier-container .video-wrapper {
     margin-top: 100px; /* Ensure it starts below navbar */
   }
 
