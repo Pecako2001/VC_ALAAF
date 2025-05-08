@@ -107,7 +107,7 @@ export default function HomePage() {
                   <Card shadow="sm" p={0} className={styles.card} style={transitionStyles}>
                     <Box className={styles.imageBox}>
                       <Image
-                        src={`/VC_ALAAF/images/wagen_2025_${n}.png`}
+                        src={`/images/wagen_2025_${n}.png`}
                         alt={`Wagen ${n}`}
                         fill
                         style={{ objectFit: "cover" }}
@@ -205,7 +205,7 @@ export default function HomePage() {
         </Text>
         <Button
           component="a"
-          href="https://www.instagram.com/vc_alaaf/"
+          href="https://www.instagram.com/"
           target="_blank"
           variant="gradient"
           gradient={{ from: "pink", to: "orange" }}

@@ -18,7 +18,7 @@ export default function NavbarSimpleContent() {
       <Container className={classes.navContainer}>
         {/* logo + title */}
         <Group align="center" gap={8} wrap="nowrap">
-          <Image src="/VC_ALAAF/images/Logo.png" width={32} height={32} alt="VC-ALAAF Logo" />
+          <Image src="/images/Logo.png" width={32} height={32} alt="VC-ALAAF Logo" />
           <Text className={classes.title}>VC-ALAAF</Text>
         </Group>
 

@@ -2,7 +2,7 @@
 exclude = '''
 /(
     frontend/UI/*
-    frontend/VC_ALAAF/images_rc.py
+    frontend/images_rc.py
     backend/test_Speed/*
     backend/testing/*
     cplus/*

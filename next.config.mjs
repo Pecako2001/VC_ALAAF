@@ -5,8 +5,6 @@ const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const repo = 'VC_ALAAF'; // GitHub repo name
-
 const config = {
   reactStrictMode: false,
   eslint: {

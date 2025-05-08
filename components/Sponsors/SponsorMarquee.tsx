@@ -3,7 +3,7 @@ import Image from "next/image";
 import sponsorList from "../../public/sponsors/sponsors.json";
 import styles from "./SponsorMarquee.module.css";
 
-const logos = sponsorList.map((file) => `/VC_ALAAF/sponsors/${file}`);
+const logos = sponsorList.map((file) => `/sponsors/${file}`);
 
 export default function SponsorMarquee() {
   const items = [...logos, ...logos];
