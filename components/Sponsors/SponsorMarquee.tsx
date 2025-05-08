@@ -6,7 +6,7 @@ import styles from "./SponsorMarquee.module.css";
 const logos = sponsorList.map((file) => `/VC_ALAAF/sponsors/${file}`);
 
 export default function SponsorMarquee() {
-  const items = [...logos, ...logos];        // duplicate for seamless loop
+  const items = [...logos, ...logos];
 
   return (
     <Container fluid className={styles.marqueeWrapper}>
@@ -16,10 +16,10 @@ export default function SponsorMarquee() {
             <Image
               src={src}
               alt={`Sponsor ${idx + 1}`}
-              fill                               // use all available space
+              fill                              
               sizes="260px"
-              style={{ objectFit: "contain" }}   // keep aspect‑ratio
-              priority={idx < logos.length}      // only the first set gets priority
+              style={{ objectFit: "contain" }}   
+              priority={idx < logos.length}      
             />
           </Box>
         ))}
