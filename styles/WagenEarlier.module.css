@@ -1,0 +1,103 @@
+/* ---------- hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #00427a 50%, #005c9e 100%);
+  padding: 6rem 0 1.5rem;      /* slightly trimmed */
+  color: #fff;
+  text-align: center;
+}
+.heroTitle {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+.heroSubtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ---------- page background ---------- */
+.pageBackground {
+  background: linear-gradient(135deg, #e0f2fe 0%, #f4f7fb 100%);
+  padding: 3rem 0 6rem;         /* top/bottom padding */
+}
+
+/* ---------- container ---------- */
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+/* ---------- alternating cards ---------- */
+.card {
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+  background: #ffffff;          /* keep cards white */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+.normal { flex-direction: row; }
+.reversed { flex-direction: row-reverse; }
+
+/* ---------- text side ---------- */
+.text {
+  flex: 1 1 320px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.yearRow {
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.yearBar {
+  background: #0093d0;
+  width: 4px;
+  height: 32px;
+}
+.year {
+  color: #002856;
+  margin-left: 0.5rem;
+}
+.theme {
+  color: #0093d0;
+}
+
+/* ---------- image side ---------- */
+.imageWrapper {
+  position: relative;
+  flex: 1 1 380px;
+  min-height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.image {
+  transition: transform 0.5s ease;
+}
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+/* ---------- slide wrapper ---------- */
+.slideImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 780px) {
+  .card {
+    flex-direction: column !important;
+  }
+  .text {
+    padding: 1.5rem 1rem;
+  }
+}

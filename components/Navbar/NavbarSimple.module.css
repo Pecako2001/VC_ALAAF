@@ -1,0 +1,86 @@
+/* overall nav wrapper */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* make this full‐bleed, even if it’s inside a container */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+
+  background: #002856;               
+  border-bottom: 4px solid #0093d0;  /* full-width stripe */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* inner container (still max-width 1200px) */
+.navContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;    /* gutter on mobile */
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* logo text */
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* links group */
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* each link */
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* hover state */
+.link:hover {
+  color: #ffffff;
+}
+
+/* underline animation */
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #0093d0;
+  transition: width 0.3s ease, left 0.3s ease;
+  transform: translateX(-50%);
+}
+.link:hover::after,
+.active::after {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* active state */
+.active {
+  color: #ffffff;
+}
+
+/* icon inherits text color */
+.icon {
+  color: currentColor;
+}

@@ -1,0 +1,12 @@
+[tool.black]
+exclude = '''
+/(
+    frontend/UI/*
+    frontend/images_rc.py
+    backend/test_Speed/*
+    backend/testing/*
+    cplus/*
+    frontend/templates/*
+    python/*
+)/
+'''
