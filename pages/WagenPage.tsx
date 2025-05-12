@@ -202,13 +202,13 @@ export default function WagensPage() {
       <Modal
         opened={opened}
         onClose={() => setOpened(false)}
-        size="xl"  // Changed from "lg" to "xl"
+        size="lg"
         centered
       >
         <Carousel
           withIndicators
           slideSize="100%"
-          height={800}
+          height={"30rem"}
           styles={{ indicator: { background: "#0093d0" } }}
         >
           {gallery.map((src) => (
