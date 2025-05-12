@@ -62,14 +62,14 @@ export default function HomePage() {
   return (
     <WebLayout>
       <Head>
-        <title>VC-ALAAF</title>
+        <title>VC AL-AAF</title>
       </Head>
 
       {/* Hero */}
       <Box className={styles.hero}>
         <Container size="lg">
           <Title order={1} className={styles.heroTitle}>
-            Welkom bij VC-ALAAF
+            Welkom bij VC AL-AAF
           </Title>
           <Text className={styles.heroSubtitle}>
             Bouw mee aan onze carnavalswagen 2026
