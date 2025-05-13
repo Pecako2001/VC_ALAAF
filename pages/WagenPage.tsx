@@ -93,7 +93,7 @@ export default function WagensPage() {
     },
     {
       year: "2020",
-      theme: "Skihut",
+      theme: "Boer",
       desc: "Neet naor het malieveld, vasteloavend det telt!",
       image: "/images/Wagen2020.jpeg",
       gallery: [
