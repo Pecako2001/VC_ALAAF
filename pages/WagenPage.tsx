@@ -210,10 +210,10 @@ export default function WagensPage() {
         >
           {gallery.map((src) => (
             <Carousel.Slide key={src}>
-              <Box className={styles.slideImageWrapper} sx={{ position: 'relative' }}>
+              <Box className={styles.slideImageWrapper} style={{ position: 'relative' }}>
                 {/* spinner while not loaded */}
                 {!loaded[src] && (
-                  <Center sx={{ width: '100%', height: '100%', position: 'absolute', top: 0 }}>
+                  <Center style={{ width: '100%', height: '100%', position: 'absolute', top: 0 }}>
                     <Loader />
                   </Center>
                 )}
